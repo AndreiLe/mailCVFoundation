@@ -1,0 +1,70 @@
+// Body Styles 
+body,
+html, 
+.body {
+  background: #eee !important;
+}
+
+.body {
+  border-top: 4px solid #d90e26;
+}
+
+.mail-body{
+  padding: 0 50px 60px !important;
+  p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #565656;
+  }
+  .body-first-text{
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 28px;
+    color: #d90e26;
+    margin-bottom: 20px;
+  }
+  .body-last-text{
+    margin-bottom: 5px;
+    line-height: 20px !important;
+  }
+}
+
+.mail-info{
+  hr {
+    border-top: 1px solid #cecece;
+  }
+}
+
+table.button.info-btn {
+  table {
+    td {
+      background-color: #FFF;
+      border: 2px solid #cecece;
+    }
+    tr td a {
+      color: #cecece;
+      &:visited {
+        color: #cecece;
+      }
+    }
+  }
+  &:hover table td, &:active table td {
+    background-color: #eee;
+    border: 2px solid #565656;
+  }
+  &:hover table tr td a {
+    color: #565656;
+  }
+}
+
+table.container.mail-footer{
+  background-color: #eee;
+}
+
+.mail-footer{
+  p{
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #565656;
+  }
+}
