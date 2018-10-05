@@ -1,9 +1,5 @@
 ---
 layout: index-layout
-subject: Subject
-description: Description
-name: Name
-myname: Name
 ---
 <spacer size="4" class="header-top-line"></spacer>
 <spacer size="60"></spacer>
@@ -15,26 +11,26 @@ myname: Name
   </row>
 </container>
 <container>
-  <spacer size="150"></spacer>
+  <spacer size="100"></spacer>
   <row>
     <columns class="mail-body">
       <p class="body-first-text">
-        Hi, {{name}}!
+        {{contacts.greeting}}
       </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <em>Cupiditate inventore</em> soluta reiciendis est suscipit, deleniti possimus optio adipisci, obcaecati cum consectetur dolore ad dolores, culpa delectus quam aliquam. <strong>Commodi, vel.</strong></p>
+      {{#markdown}}{{contacts.maintext}}{{/markdown}}
     </columns>
   </row>
   <row>
     <columns class="mail-body">
       <p class="body-last-text">
-        Regards
+        {{contacts.leave}}
       </p>
       <p class="body-last-text">
-        <strong>{{myname}} {{myname}}</strong>
+        {{contacts.name}} {{contacts.lastname}}
       </p>
     </columns>
   </row>
-  <spacer size="160"></spacer>
+  <spacer size="70"></spacer>
 </container>
 <spacer size="20"></spacer>
 <container class="mail-info">
@@ -46,44 +42,31 @@ myname: Name
       </a>
     </columns>
   </row>
-  <hr/>
-  <row  class="mail-info-footer">
-    <columns small="12" large="4" style="padding-bottom: 0; padding-top: 5px;">
-      <center>
-        <button class="small info-btn expanded" target="_blank" href="https://andreile.github.io/#used">Used »</button>
-      </center>
-    </columns>
-    <columns small="12" large="4" style="padding-bottom: 0; padding-top: 5px;">
-      <center>
-        <button class="small info-btn expanded" target="_blank" href="https://andreile.github.io/#now">Now »</button>
-      </center>
-    </columns>
-    <columns small="12" large="4" style="padding-bottom: 0; padding-top: 5px;">
-      <center>
-        <button class="small info-btn expanded" target="_blank" href="https://andreile.github.io/#todo">Todo »</button>
-      </center>
-    </columns>
-  </row>
 </container>
 <spacer size="30"></spacer>
 <container class="mail-footer">
   <row>
     <columns small="12" large="4">
-      <p>{{myname}}</p>
-      <p>{{myname}}</p>
+      <p>{{contacts.name}}</p>
+      <p>{{contacts.lastname}}</p>
     </columns>
     <columns small="12" large="7">
-      <p style="margin-bottom: 0;"><a href="mailto:name.name@mail.ee" target="_blank">name.name@mail.ee</a></p>
-      <p style="margin-bottom: 0;"><a href="tel:+000000000" target="_blank">+000 000 000</a></p>
+      <p style="margin-bottom: 0;"><a href="mailto:{{contacts.email}}" target="_blank">andrei.lebedev.work@gmail.com</a></p>
+      <p style="margin-bottom: 0;"><a href="tel:{{contacts.phone}}" target="_blank">{{contacts.phone}}</a></p>
     </columns>
-    <columns small="6" large="1">
+    <columns small="4" large="1">
       <center>
-        <a href="https://andreile.github.io/" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAABLFBMVEX///9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWQXOu4AAAAY3RSTlMAAQQICgwODxESExUZGx0fICIlJiosNDc6PEBBREZHTVNUVllbXF5fYmRmamxvcXd4e36Cg4SFhomKi4yNj5CTl6KkqaqrrbGztLa9wMXJyszO1tjd4eTm6+zu7/H09/n7/f6j2rUHAAABBElEQVQYGZ3BZyMCAQDH4b8okayshDK6CFmR0ZWZZGSXjNLv+38HrlOdtz2POuSOR2TxL0/oH2+Gz5B+FXj0ymkeuJK0AhzIKQYUpK5X4Msjh2gd8lIcy74cluqQl0pYqr1qi9YhLwPbodoM4FQvwO47VL1qMQAzDNzqBDhSy/ANxO6AGY0B1T61dCemDOBeUg4w5VQCQpICQK1fbWtAUZYLIKMWVxmYlmUUqPnUtA4UZTsHsvrjKgPjsnmAmk+2BHDZs2Om02kzNZAFsmoIVoDIA7bKwgd8L8qyCpwFaJrdAo5l8ed4G9I1tieXu8RzUA2DG2FpZDOVTCb3tielOTOkzvwAh3ZS3jMJ5xsAAAAASUVORK5CYII=" alt="Site"></a>
+        <a href="{{contacts.facebook}}" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE4NTI5MDhBQzg5NzExRThBQTU3RDU0MUI3NzcwNjY4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE4NTI5MDhCQzg5NzExRThBQTU3RDU0MUI3NzcwNjY4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTg1MjkwODhDODk3MTFFOEFBNTdENTQxQjc3NzA2NjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTg1MjkwODlDODk3MTFFOEFBNTdENTQxQjc3NzA2NjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jgq+cAAACDklEQVR42txWu2oCURC9c30jQRBb/QQ7LcRGLFKZdEu+wcKP8QeEfEHEQrQQUvkFViIKIoKFD7YQXzuZWXYv62YTdk1ikYFRuXf3nHmcuVdARPHXJsUdLGz/qNVqr/T1RH7+Jdx+p9PRrkjIXsgjflEAQHCpL5eLsEsupTTdsmevculBCE6nkzgcDgqc1tzN1T+Viwz9EjB4OBzGcrmMhUIBIpEIUDYwGo2w2+0CP+PI6IrEl53PZ5OgXq+LUql0JZxkMglEIgzD+DlJsVhkArV2PB7N8m02G5Wtp7r8GDeYI6QSmVj8MZlMsNlsMjm4M7iJxKo1JhIJtTYYDMRsNoN4PG7uR6PR20g4Oi4JO5dru92inYmu68hN5yxCoZCSdiASfoGB0+m0kclkcL/fYy6XUzXJ5/NisVhcUqkUk8NqtZJM5OyLr0w4A5IraJoGVl8UQrValZVKBTnbfr+PrVaL1RechF+gyQavpvIelclEnM/nShyBe8JAu90Ox+MxEhlms1nJM8F76/Ual8sl0kCK6XSqVBeIxFbMcDgEcp4HbDQaSHNigrXbbaPX60km4SxisdjtErYOQyARSCZy9AvomDEJ7V4EVpdTxtZBKDhq23g+OHp7PrwuQRl04t0g9tp3N+xdbsb7Xr9kD36PMJdMvwr0wYvkjfzR5x2PDiL0mA3GfVdR/Zu/RB8CDABrgPsVjQJxswAAAABJRU5ErkJggg==" alt="Site"></a>
       </center>
     </columns>
-    <columns small="6" large="1">
+    <columns small="4" large="1">
       <center>
-        <a href="https://github.com/AndreiLe/" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAABPlBMVEX///9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWC/EQsAAAAaXRSTlMAAgQFBgcICg4PEhMUFxobHB4hJSYqKy8xMzQ2OT4/QURHSElSVlhZYmZvc3R5fH1+f4SJi4yNj5GWl5manZ+ipKWnq66wsrO4vcHFyMrMzc7Q0tXW19jZ2t3e3+Lj5+nq7/H09/j6/f6g0biwAAABAklEQVQYGZ3BdztCYQCH4Z/ZIDN7pGRHZvbs2CsRGans5/t/AW8l5/CP63Lf+psnPBvf2xjv0W8h64WC24VmObnjfHsak82XwmleZa40fFD2DjP6sgkxf4y3q+QdN0P+e+hVURcQltpbpIoOt7QLCRVUbgNR2VJAv4xAHgjKtgUsy5gELDk0vsKpjBVgQk5JyMjYASJyOoNHGavAohxcOcjIiAKXcggA5zIGn4GIbAlgXUatxUmaaY9Kuo8wQiro48B7Qf7QJ2k4QcG1SvaJVT+QrJE0QFFQJd4sAbVVyXDnMJZU1pplbjQkoz4LrMvWdAwJGQ3AlH4YSa7JqEtZnfq/T5bSUvlZBtEJAAAAAElFTkSuQmCC" alt="Github"></a>
+        <a href="{{contacts.web}}" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAABLFBMVEX///9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWQXOu4AAAAY3RSTlMAAQQICgwODxESExUZGx0fICIlJiosNDc6PEBBREZHTVNUVllbXF5fYmRmamxvcXd4e36Cg4SFhomKi4yNj5CTl6KkqaqrrbGztLa9wMXJyszO1tjd4eTm6+zu7/H09/n7/f6j2rUHAAABBElEQVQYGZ3BZyMCAQDH4b8okayshDK6CFmR0ZWZZGSXjNLv+38HrlOdtz2POuSOR2TxL0/oH2+Gz5B+FXj0ymkeuJK0AhzIKQYUpK5X4Msjh2gd8lIcy74cluqQl0pYqr1qi9YhLwPbodoM4FQvwO47VL1qMQAzDNzqBDhSy/ANxO6AGY0B1T61dCemDOBeUg4w5VQCQpICQK1fbWtAUZYLIKMWVxmYlmUUqPnUtA4UZTsHsvrjKgPjsnmAmk+2BHDZs2Om02kzNZAFsmoIVoDIA7bKwgd8L8qyCpwFaJrdAo5l8ed4G9I1tieXu8RzUA2DG2FpZDOVTCb3tielOTOkzvwAh3ZS3jMJ5xsAAAAASUVORK5CYII=" alt="Site"></a>
+      </center>
+    </columns>
+    <columns small="4" large="1">
+      <center>
+        <a href="{{contacts.git}}" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAABPlBMVEX///9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWC/EQsAAAAaXRSTlMAAgQFBgcICg4PEhMUFxobHB4hJSYqKy8xMzQ2OT4/QURHSElSVlhZYmZvc3R5fH1+f4SJi4yNj5GWl5manZ+ipKWnq66wsrO4vcHFyMrMzc7Q0tXW19jZ2t3e3+Lj5+nq7/H09/j6/f6g0biwAAABAklEQVQYGZ3BdztCYQCH4Z/ZIDN7pGRHZvbs2CsRGans5/t/AW8l5/CP63Lf+psnPBvf2xjv0W8h64WC24VmObnjfHsak82XwmleZa40fFD2DjP6sgkxf4y3q+QdN0P+e+hVURcQltpbpIoOt7QLCRVUbgNR2VJAv4xAHgjKtgUsy5gELDk0vsKpjBVgQk5JyMjYASJyOoNHGavAohxcOcjIiAKXcggA5zIGn4GIbAlgXUatxUmaaY9Kuo8wQiro48B7Qf7QJ2k4QcG1SvaJVT+QrJE0QFFQJd4sAbVVyXDnMJZU1pplbjQkoz4LrMvWdAwJGQ3AlH4YSa7JqEtZnfq/T5bSUvlZBtEJAAAAAElFTkSuQmCC" alt="Github"></a>
       </center>
     </columns>
   </row>
